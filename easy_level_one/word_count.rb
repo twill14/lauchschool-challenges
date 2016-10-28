@@ -5,6 +5,7 @@ class Phrase
     end
     
     def word_count
+        return @hash if !@hash.empty?
         @words.each do |word|
           if @hash.has_key?(word)
               @hash[word] += 1
@@ -13,10 +14,6 @@ class Phrase
           end
         end
         
-        p @hash
+        @hash
     end
 end
-
-phrase = Phrase.new('one fish two Fish red fish blue fish')
-
-phrase.word_count
